@@ -16,7 +16,8 @@ export const findRecurringWords = (input: string) => {
     .toLowerCase();
     
     console.log("🚀 ~ findRecurringWords ~ cleanedInput:", cleanedInput)
-    const words = cleanedInput.split(/\s+/).filter(Boolean);
+    // Replace multiple spaces with a single space before splitting
+    const words = cleanedInput.replace(/\s+/g, " ").trim().split(" ").filter(Boolean);
     const wordDictionary = new Map<string, number>();
     words.forEach(word => {
         wordDictionary.set(word, (wordDictionary.get(word) ?? 0) + 1);

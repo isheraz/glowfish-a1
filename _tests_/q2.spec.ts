@@ -76,7 +76,6 @@ describe('findRecurringWords', () => {
         const expected: RecurringWord[] = [
             { word: "apple", count: 2 },
             { word: "banana", count: 1 },
-            { word: "", count: 0 }
         ];
         expect(findRecurringWords(input)).toEqual(expected);
     });
